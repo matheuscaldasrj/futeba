@@ -1,0 +1,21 @@
+<ion-menu [content]="menuContent">
+
+
+<ion-content>
+
+  <ion-list>
+  <ion-item *ngFor="let page of pages" >
+    <p (click)="openPage(page)" menuToggle>
+      <ion-icon name="{{page.icon}}"></ion-icon>
+       {{page.title}}
+     </p>
+  </ion-item>
+
+  </ion-list>
+
+ </ion-content>
+
+</ion-menu>
+
+
+<ion-nav #menuContent [root]="rootPage"></ion-nav>

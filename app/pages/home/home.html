@@ -1,0 +1,71 @@
+
+<ion-content class="home" padding>
+
+<ion-header>
+
+  <ion-navbar>
+  <button menuToggle>
+
+  <ion-icon name="menu"></ion-icon>
+
+
+  </button>
+
+    <ion-title>
+      TESTE
+    </ion-title>
+
+  </ion-navbar>
+
+  <button (click)="loadGames()">Load Games</button>
+
+  <button (click)="loadUsers()">Load Users</button>
+
+
+
+<!-- <p ng-show="false"> My Games </p>
+  <ion-item *ngFor="let game of games" >
+    <p >
+      {{game.name}}, Date: {{game.day}}, Price: R${{game.price}},00
+     </p>
+  </ion-item> -->
+
+  <ion-item *ngFor="let user of users" >
+    <p >
+      {{user.name}}, Apelido: {{user.nickname}}, idade: {{user.age}}
+     </p>
+  </ion-item>
+
+</ion-header>
+
+
+  <ion-card *ngFor="#game of games">
+    <img src="./../../images/futebol.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+      {{game.name | uppercase}}
+        </ion-card-title>
+      <p>
+         Date: {{game.day}} <br>
+         Price: R${{game.price}},00
+      </p>
+    </ion-card-content>
+
+
+  </ion-card>
+
+
+<ion-item *ngFor="let page of pages" >
+  <p (click)="openPage(page)" menuToggle>
+    <ion-icon name="{{page.icon}}"></ion-icon>
+     {{page.title}}
+   </p>
+</ion-item>
+
+</ion-content>
+
+
+<button (click)="createNewGame()"
+fab danger fab-bottom fab-right style="z-index: 99">
+  <ion-icon name="add"></ion-icon>
+</button>

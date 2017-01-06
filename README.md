@@ -1,2 +1,0 @@
-# futeba
-futeba app

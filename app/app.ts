@@ -3,7 +3,7 @@ import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
 import {MenuTestePage} from './pages/menu-teste/menu-teste';
-import {MyProvider} from './providers/firebase-service/firebase-service';
+import {FireBaseService} from './providers/firebase-service/firebase-service';
 
 
 @Component({
@@ -38,4 +38,4 @@ export class MyApp {
 }
 
 
-ionicBootstrap(MyApp,[MyProvider]);
+ionicBootstrap(MyApp,[FireBaseService]);

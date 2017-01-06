@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {NavController} from 'ionic-angular';
-import {MyProvider} from './../../providers/firebase-service/firebase-service';
+import {FireBaseService} from './../../providers/firebase-service/firebase-service';
 import {GameCreationPage} from './../game-creation/game-creation';
 
 @Component({
@@ -14,7 +14,7 @@ export class HomePage {
 
   constructor(
     private navController: NavController,
-    private provider : MyProvider) {
+    private provider : FireBaseService) {
 
   }
 
@@ -53,7 +53,6 @@ export class HomePage {
 
     return array;
   }
-
 
   createNewGame() : void{
     alert("Cheguei");

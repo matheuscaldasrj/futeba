@@ -8,8 +8,53 @@
   <ion-title>Criar novo Game</ion-title>
 </ion-navbar>
 
-
-
 <ion-content padding class="game-creation">
+<!-- name -->
+<ion-item>
+   <ion-label floating>Nome</ion-label>
+   <ion-input type="text"></ion-input>
+ </ion-item>
+
+<!-- hour -->
+ <ion-item>
+   <ion-label floating>Hora</ion-label>
+   <ion-datetime displayFormat="HH:mm" [(ngModel)]="time"></ion-datetime>
+ </ion-item>
+
+<!-- date -->
+<ion-item>
+  <ion-label floating>Dia</ion-label>
+  <ion-datetime displayFormat="DD de MMM, YYYY" [(ngModel)]="date"></ion-datetime>
+</ion-item>
+
+<!-- should Repeat? -->
+<ion-item>
+    <ion-label>Repetir semanalmente</ion-label>
+     <ion-checkbox checked="true"></ion-checkbox> Repetir semanalmente
+  </ion-item>
+
+<!-- Min.number of players -->
+<ion-item>
+   <ion-label floating>Num.Minimo Jogadores</ion-label>
+   <ion-input type="number"></ion-input>
+ </ion-item>
+
+ <ion-item>
+    <ion-label floating>Preco total</ion-label>
+    <ion-input type="float"></ion-input>
+  </ion-item>
+
+<!-- hour -->
+ <button (click)="createNewGame()" block ion-button color="secondary" round>
+  <ion-icon name="add"></ion-icon>
+   Criar
+ </button>
+
+
+
+
+
+
+
 
 </ion-content>

@@ -2,6 +2,8 @@ import {Component} from "@angular/core";
 import {NavController} from 'ionic-angular';
 import {FireBaseService} from './../../providers/firebase-service/firebase-service';
 import {GameCreationPage} from './../game-creation/game-creation';
+import { Game } from './../../classes/classes';
+import { User } from './../../classes/classes';
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
@@ -55,7 +57,6 @@ export class HomePage {
   }
 
   createNewGame() : void{
-    alert("Cheguei");
     this.navController.push(GameCreationPage);
   }
 
@@ -82,39 +83,6 @@ export class HomePage {
     }
 
     return array;
-  }
-
-}
-
-
-class Game {
-    name: string;
-    day: string;
-    time: string;
-    price: number;
-
-  constructor(name: string, day: string,  time: string, price: number) {
-      this.name = name;
-      this.day = day;
-      this.time = time;
-      this.price = price;
-
-  }
-
-}
-
-
-class User {
-    name: string;
-    nameDb: string;
-    nickname: string;
-    age: number;
-
-  constructor(nameDb: string, name: string, nickname: string, age: number) {
-      this.name = name;
-      this.nickname = nickname;
-      this.age = age;
-      this.nameDb = nameDb;
   }
 
 }

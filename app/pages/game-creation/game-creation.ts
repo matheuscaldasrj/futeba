@@ -1,15 +1,33 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Teste } from './../../classes/classes';
 
-/*
-  Generated class for the GameCreationPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   templateUrl: 'build/pages/game-creation/game-creation.html',
 })
 export class GameCreationPage {
-  constructor(private nav: NavController) {}
+
+  name: string;
+  time: Object;
+  date: Object;
+  repeatWeekly: boolean;
+  minPlayers: number;
+  totalPrice: number;
+
+
+  constructor(private nav: NavController) {
+
+  }
+
+
+  createNewGame() : void
+  {
+    console.log("Vamos criar nova partida");
+    let user = new Teste("joao","14");
+    console.log("Ola mundo");
+    console.log(user);
+
+  }
+
+
 }

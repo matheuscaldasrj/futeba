@@ -25,8 +25,7 @@ export class GameCreationPage {
     this.provider.post("games",newGame);
 
     let response = this.provider.post(null,newGame).then(resp=> {
-                  console.log(resp);
-
+                //  console.log(resp);
                 });
 
       this.navController.pop();

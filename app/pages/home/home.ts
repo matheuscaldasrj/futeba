@@ -1,7 +1,15 @@
 import {Component} from "@angular/core";
 import {NavController} from 'ionic-angular';
+
+//Providers
 import {FireBaseService} from './../../providers/firebase-service/firebase-service';
+
+//Pages
 import {GameCreationPage} from './../game-creation/game-creation';
+import {GameDetailsPage} from './../game-details/game-details';
+
+
+//Classes
 import { Game } from './../../classes/classes';
 import { User } from './../../classes/classes';
 
@@ -20,17 +28,14 @@ export class HomePage {
 
   }
 
-  ionViewDidEnter()
-  {
+  ionViewDidEnter(){
       this.loadGames();
   }
 
   loadGames(): void {
     let data = this.provider.load("games")
                 .then(resp=> {
-                  console.log(resp);
                   this.games = this.convertToGameArray(resp);
-                  console.log(this.games);
                 });
   }
 
@@ -51,8 +56,6 @@ export class HomePage {
 
       //creating Game
       let myGame = unsorted[keys[j]];
-      console.log("aqui");
-      console.log(myGame);
       let game = new Game(myGame.name, new Date(myGame.date), myGame.repeatWeekly,myGame.minPlayers, myGame.totalPrice);
       array[j] = game;
     }
@@ -62,6 +65,12 @@ export class HomePage {
 
   createNewGame() : void{
     this.navController.push(GameCreationPage);
+  }
+
+  gameDetails() : void {
+    this.navController.push(GameDetailsPage);
+    console.log("Vamos aos detalhes");
+
   }
 
 

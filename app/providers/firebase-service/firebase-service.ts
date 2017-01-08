@@ -20,14 +20,6 @@ export class FireBaseService {
 
   post(urlToAppend : string, object : Object)
   {
-    console.log(this.appUrl + "games.json");
-    console.log("POSTING IN " + this.appUrl + "games.json" + "\n the content " + JSON.stringify(object));
-    console.log(object);
-    //return this._http.post(this.appUrl + "games.json",  JSON.stringify(object))
-  //  .map(res => res.json())
-    //.catch(this.handleError)
-
-
     // don't have the data yet
     return new Promise(resolve => {
       // We're using Angular Http provider to request the data,

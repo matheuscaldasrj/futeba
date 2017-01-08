@@ -10,12 +10,10 @@
 
   </ion-navbar>
 
-  <button (click)="loadGames()">Load Games</button>
-
 </ion-header>
 
 <!-- Card for each game -->
-  <ion-card *ngFor="let game of games">
+  <ion-card *ngFor="let game of games" (click)="gameDetails()">
     <img src="./../../images/futebol.jpg"/>
     <ion-card-content>
       <ion-card-title>

@@ -31,7 +31,6 @@ export class HomePage {
   loadUsers(): void {
     let data = this.provider.load("users")
                 .then(resp=> {
-
                   this.users = this.convertToUserArray(resp);
                 });
   }
@@ -48,8 +47,7 @@ export class HomePage {
 
       //creating Game
       let myGame = unsorted[keys[j]][name];
-      let game = new Game(name,  myGame.day, myGame.time, myGame.price);
-
+      let game = new Game(name, myGame.date, myGame.repeatWeekly,myGame.minPlayers, myGame.totalPrice);
       array[j] = game;
     }
 

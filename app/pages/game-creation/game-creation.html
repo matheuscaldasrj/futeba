@@ -1,9 +1,3 @@
-<!--
-  Generated template for the GameCreationPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-navbar *navbar>
   <ion-title>Criar novo Game</ion-title>
 </ion-navbar>
@@ -12,36 +6,33 @@
 <!-- name -->
 <ion-item>
    <ion-label floating>Nome</ion-label>
-   <ion-input type="text"></ion-input>
- </ion-item>
-
-<!-- hour -->
- <ion-item>
-   <ion-label floating>Hora</ion-label>
-   <ion-datetime displayFormat="HH:mm" [(ngModel)]="time"></ion-datetime>
+   <ion-input type="text" [(ngModel)]="name" ></ion-input>
  </ion-item>
 
 <!-- date -->
 <ion-item>
-  <ion-label floating>Dia</ion-label>
-  <ion-datetime displayFormat="DD de MMM, YYYY" [(ngModel)]="date"></ion-datetime>
+  <ion-label floating>Data</ion-label>
+  <ion-datetime displayFormat="HH:mm, DD de MMM de YYYY" [(ngModel)]="date"></ion-datetime>
 </ion-item>
+
 
 <!-- should Repeat? -->
 <ion-item>
     <ion-label>Repetir semanalmente</ion-label>
-     <ion-checkbox checked="true"></ion-checkbox> Repetir semanalmente
+     <ion-checkbox checked="true" [(ngModel)]="repeatWeekly"></ion-checkbox> Repetir semanalmente
   </ion-item>
 
 <!-- Min.number of players -->
 <ion-item>
    <ion-label floating>Num.Minimo Jogadores</ion-label>
-   <ion-input type="number"></ion-input>
+   <ion-input type="number" [(ngModel)]="minPlayers"></ion-input>
  </ion-item>
 
+
+<!-- total price -->
  <ion-item>
     <ion-label floating>Preco total</ion-label>
-    <ion-input type="float"></ion-input>
+    <ion-input type="number" [(ngModel)]="totalPrice"></ion-input>
   </ion-item>
 
 <!-- hour -->
@@ -49,10 +40,6 @@
   <ion-icon name="add"></ion-icon>
    Criar
  </button>
-
-
-
-
 
 
 

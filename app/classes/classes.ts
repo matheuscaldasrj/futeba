@@ -1,15 +1,23 @@
 export class Game {
     name: string;
-    day: string;
     time: string;
-    price: number;
+    date: string;
+    repeatWeekly: boolean;
+    minPlayers: number;
+    totalPrice: number;
 
-  constructor(name: string, day: string,  time: string, price: number) {
+  constructor(
+    name: string,
+    date: string,
+    repeatWeekly: boolean,
+    minPlayers: number,
+    totalPrice: number) {
+
       this.name = name;
-      this.day = day;
-      this.time = time;
-      this.price = price;
-
+      this.date = date;
+      this.repeatWeekly = repeatWeekly;
+      this.minPlayers = minPlayers;
+      this.totalPrice = totalPrice;
   }
 
 }

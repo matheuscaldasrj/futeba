@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Teste } from './../../classes/classes';
+import { Game } from './../../classes/classes';
+import { User } from './../../classes/classes';
+import {FireBaseService} from './../../providers/firebase-service/firebase-service';
 
 @Component({
   templateUrl: 'build/pages/game-creation/game-creation.html',
@@ -8,24 +10,27 @@ import { Teste } from './../../classes/classes';
 export class GameCreationPage {
 
   name: string;
-  time: Object;
-  date: Object;
+  date: string = new Date().toISOString();
   repeatWeekly: boolean;
   minPlayers: number;
   totalPrice: number;
 
 
-  constructor(private nav: NavController) {
+  constructor(private nav: NavController, private provider : FireBaseService) {
 
   }
 
 
   createNewGame() : void
   {
-    console.log("Vamos criar nova partida");
-    let user = new Teste("joao","14");
-    console.log("Ola mundo");
-    console.log(user);
+    let newGame =  new Game(this.name, this.date, this.repeatWeekly,this.minPlayers, this.totalPrice);
+    console.log(newGame);
+    this.provider.post(null,newGame);
+
+    let response = this.provider.post(null,newGame).then(resp=> {
+                  console.log(resp);
+                });
+
 
   }
 

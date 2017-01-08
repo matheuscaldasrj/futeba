@@ -67,8 +67,10 @@ export class HomePage {
     this.navController.push(GameCreationPage);
   }
 
-  gameDetails() : void {
-    this.navController.push(GameDetailsPage);
+  gameDetails(game: Game) : void {
+    this.navController.push(GameDetailsPage, {
+      game: game
+    });
     console.log("Vamos aos detalhes");
 
   }

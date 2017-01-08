@@ -13,7 +13,7 @@
 </ion-header>
 
 <!-- Card for each game -->
-  <ion-card *ngFor="let game of games" (click)="gameDetails()">
+  <ion-card *ngFor="let game of games" (click)="gameDetails(game)">
     <img src="./../../images/futebol.jpg"/>
     <ion-card-content>
       <ion-card-title>

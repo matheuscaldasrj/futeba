@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+
+//Classes
+import { Game } from './../../classes/classes';
 
 /*
   Generated class for the GameDetailsPage page.
@@ -11,5 +14,11 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'build/pages/game-details/game-details.html',
 })
 export class GameDetailsPage {
-  constructor(private nav: NavController) {}
+
+  game: Game;
+
+  constructor(private nav: NavController, private navParams: NavParams) {
+    this.game = navParams.get("game");
+
+  }
 }

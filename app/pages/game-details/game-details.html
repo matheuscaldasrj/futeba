@@ -5,9 +5,96 @@
   Ionic pages and navigation.
 -->
 <ion-navbar *navbar>
-  <ion-title>game-details</ion-title>
+  <h1> <ion-title>{{game.name}}</ion-title> </h1>
 </ion-navbar>
 
 <ion-content padding class="game-details">
-  
+
+<h4> {{game.date |  date:" HH mm dd MMM EEEE" }}h </h4>
+<h5> Confirmados: 4/{{game.minPlayers}} </h5>
+
+  <ion-list>
+    <ion-list-header>
+      Confirmados
+    </ion-list-header>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="./../../images/user1.jpg">
+      </ion-avatar>
+      <h2>Finn</h2>
+      <h3>I'm a big deal</h3>
+      <p>Listen, I've had a pretty messed up day...</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="./../../images/user2.jpg">
+      </ion-avatar>
+      <h2>Han</h2>
+      <h3>Look, kid...</h3>
+      <p>I've got enough on my plate as it is, and I...</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="./../../images/user3.jpg">
+      </ion-avatar>
+      <h2>Rey</h2>
+      <h3>I can handle myself</h3>
+      <p>You will remove these restraints and leave...</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="./../../images/user4.jpg">
+      </ion-avatar>
+      <h2>Luke</h2>
+      <h3>Your thoughts betray you</h3>
+      <p>I feel the good in you, the conflict...</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Não vão :/
+    </ion-list-header>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="./../../images/user5.jpg">
+      </ion-avatar>
+      <h2>Poe</h2>
+      <h3>New Ride</h3>
+      <p>I just upgraded my X-Wing. Next time...</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="./../../images/user6.jpg">
+      </ion-avatar>
+      <h2>Ben</h2>
+      <h3>Move Along</h3>
+      <p>These aren't the droids you're looking for...</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="./../../images/user7.jpg">
+      </ion-avatar>
+      <h2>Leia</h2>
+      <h3>You're My Only Hope</h3>
+      <p>I've placed information vital to the survival...</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="./../../images/user8.jpg">
+      </ion-avatar>
+      <h2>Yoda</h2>
+      <h3>Size matters not</h3>
+      <p>Do or do not. There is no try...</p>
+    </ion-item>
+  </ion-list>
+
 </ion-content>

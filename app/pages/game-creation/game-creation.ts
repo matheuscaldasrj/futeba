@@ -16,21 +16,20 @@ export class GameCreationPage {
   totalPrice: number;
 
 
-  constructor(private nav: NavController, private provider : FireBaseService) {
-
+  constructor(private navController: NavController, private provider : FireBaseService) {
   }
-
 
   createNewGame() : void
   {
-    let newGame =  new Game(this.name, this.date, this.repeatWeekly,this.minPlayers, this.totalPrice);
-    console.log(newGame);
-    this.provider.post(null,newGame);
+    let newGame =  new Game(this.name, new Date(this.date), this.repeatWeekly,this.minPlayers, this.totalPrice);
+    this.provider.post("games",newGame);
 
     let response = this.provider.post(null,newGame).then(resp=> {
                   console.log(resp);
+
                 });
 
+      this.navController.pop();
 
   }
 

@@ -1,14 +1,14 @@
 export class Game {
     name: string;
     time: string;
-    date: string;
+    date: Date;
     repeatWeekly: boolean;
     minPlayers: number;
     totalPrice: number;
 
   constructor(
     name: string,
-    date: string,
+    date: Date,
     repeatWeekly: boolean,
     minPlayers: number,
     totalPrice: number) {

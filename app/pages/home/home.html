@@ -22,9 +22,11 @@
       {{game.name | uppercase}}
         </ion-card-title>
       <p>
-         Date: {{game.day}} <br>
-         Price: R${{game.price}},00
+         Data: {{game.date |  date:" HH mm dd MMM EEEE" }}h <br>
+         <!-- Price: R${{game.price}},00 -->
+         Minimo de jogadores:  {{game.minPlayers}}
       </p>
+
     </ion-card-content>
   </ion-card>
 <!-- Card for each game -->

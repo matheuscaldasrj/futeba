@@ -20,11 +20,17 @@ export class HomePage {
 
   }
 
+  ionViewDidEnter()
+  {
+      this.loadGames();
+  }
+
   loadGames(): void {
     let data = this.provider.load("games")
                 .then(resp=> {
-
+                  console.log(resp);
                   this.games = this.convertToGameArray(resp);
+                  console.log(this.games);
                 });
   }
 
@@ -42,12 +48,12 @@ export class HomePage {
     var array = [];
     for (var j=0; j < keys.length; j++) {
 
-      //just to get the name in database
-      for (var name in unsorted[keys[j]]) break;
 
       //creating Game
-      let myGame = unsorted[keys[j]][name];
-      let game = new Game(name, myGame.date, myGame.repeatWeekly,myGame.minPlayers, myGame.totalPrice);
+      let myGame = unsorted[keys[j]];
+      console.log("aqui");
+      console.log(myGame);
+      let game = new Game(myGame.name, new Date(myGame.date), myGame.repeatWeekly,myGame.minPlayers, myGame.totalPrice);
       array[j] = game;
     }
 
